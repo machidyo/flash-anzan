@@ -1,0 +1,23 @@
+{
+    "name": "FlashAnzan.Composition",
+    "rootNamespace": "",
+    "references": [
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:2359c074672083046b6ff6b309700f8e",
+        "GUID:108f6cbb84b7e5147a8f7ac3880ad656",
+        "GUID:17147d561d976e548b8636bf35a8fe50",
+        "GUID:73e2105650c51f945aaf13b0615d76ae",
+        "GUID:8fa98b963cec5c743ab799a97e530c56",
+        "GUID:84706b0cedbcf564583ac6eca2131b12"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

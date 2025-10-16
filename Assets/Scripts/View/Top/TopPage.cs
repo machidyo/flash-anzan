@@ -1,16 +1,9 @@
+using FlashAnzan.PresentationFramework;
 using UnityEngine;
 
-public class TopPage : MonoBehaviour
+namespace FlashAnzan.View.Top
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class TopPage : Page<TopView, TopViewState>
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

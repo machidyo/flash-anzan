@@ -1,3 +1,4 @@
+using FlashAnzan.Presentation.Top;
 using UnityEngine;
 
 namespace FlashAnzan.Composition
@@ -8,7 +9,9 @@ namespace FlashAnzan.Composition
 
         void Start()
         {
-            var transitionService = new TransitionService();
+            var topPagePresenterFactory = new TopPagePresenterFactory();
+            
+            var transitionService = new TransitionService(topPagePresenterFactory);
             transitionService.ApplicationStarted();
         }
     }

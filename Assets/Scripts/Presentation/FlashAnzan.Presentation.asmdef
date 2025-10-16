@@ -1,0 +1,18 @@
+{
+    "name": "FlashAnzan.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:73e2105650c51f945aaf13b0615d76ae",
+        "GUID:8fa98b963cec5c743ab799a97e530c56",
+        "GUID:84706b0cedbcf564583ac6eca2131b12"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -20,5 +20,19 @@ namespace FlashAnzan.PresentationFramework
         {
             return disposables;
         }
+
+        protected sealed override void Initialize(TPage view)
+        {
+            base.Initialize();
+        }
+
+        protected sealed override void Dispose(TPage view)
+        {
+            base.Dispose(view);
+            foreach (var disposable in disposables)
+            {
+                disposable.Dispose();
+            }
+        }
     }
 }
