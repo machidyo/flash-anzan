@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.Assertions;
 using UnityScreenNavigator.Runtime.Core.Page;
 
@@ -8,7 +9,8 @@ namespace FlashAnzan.PresentationFramework
          where TRootView : AppView<TViewState>
          where TViewState : AppViewState
     {
-        public TRootView Root { get; set; }
+        [SerializeField] private TRootView root;
+
         private bool isInitialized;
         private TViewState state;
 
@@ -22,13 +24,13 @@ namespace FlashAnzan.PresentationFramework
 
         public override async Task Initialize()
         {
-            Assert.IsNotNull(Root);
+            Assert.IsNotNull(root);
             
             await base.Initialize();
 
             if (rootInitializationTiming == ViewInitializationTiming.Initialize && !isInitialized)
             {
-                await Root.InitializeAsync(state);
+                await root.InitializeAsync(state);
                 isInitialized = true;
             }
         }
