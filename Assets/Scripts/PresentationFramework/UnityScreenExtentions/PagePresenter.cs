@@ -14,17 +14,17 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
 
         Task IPageLifecycleEvent.Initialize()
         {
-            throw new System.NotImplementedException();
+            return ViewDidLoad(View);
         }
 
         Task IPageLifecycleEvent.WillPushEnter()
         {
-            throw new System.NotImplementedException();
+            return ViewWillPushEnter(View);
         }
 
         void IPageLifecycleEvent.DidPushEnter()
         {
-            throw new System.NotImplementedException();
+            ViewDidPushEnter(View);
         }
 
         Task IPageLifecycleEvent.WillPushExit()
@@ -60,6 +60,20 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
         Task IPageLifecycleEvent.Cleanup()
         {
             throw new System.NotImplementedException();
+        }
+
+        protected virtual Task ViewDidLoad(TPage page)
+        {
+            return Task.CompletedTask;
+        }
+
+        protected virtual Task ViewWillPushEnter(TPage page)
+        {
+            return Task.CompletedTask;
+        }
+
+        protected virtual void ViewDidPushEnter(TPage page)
+        {
         }
         
         protected override void Initialize(TPage view)

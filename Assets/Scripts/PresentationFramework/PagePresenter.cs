@@ -23,7 +23,7 @@ namespace FlashAnzan.PresentationFramework
 
         protected sealed override void Initialize(TPage view)
         {
-            base.Initialize();
+            base.Initialize(view);
         }
 
         protected sealed override void Dispose(TPage view)
