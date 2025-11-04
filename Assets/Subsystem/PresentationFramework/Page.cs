@@ -34,5 +34,18 @@ namespace FlashAnzan.PresentationFramework
                 isInitialized = true;
             }
         }
+
+        public override async Task WillPushEnter()
+        {
+            Assert.IsNotNull(root);
+
+            await base.WillPushEnter();
+
+            if (rootInitializationTiming == ViewInitializationTiming.BeforeFirstEnter && !isInitialized)
+            {
+                await root.InitializeAsync(state);
+                isInitialized = true;
+            }
+        }
     }
 }
