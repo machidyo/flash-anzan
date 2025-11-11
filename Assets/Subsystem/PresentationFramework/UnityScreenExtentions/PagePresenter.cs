@@ -29,12 +29,12 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
 
         Task IPageLifecycleEvent.WillPushExit()
         {
-            throw new System.NotImplementedException();
+            return ViewWillPushExit(View);
         }
 
         void IPageLifecycleEvent.DidPushExit()
         {
-            throw new System.NotImplementedException();
+            ViewDidPushExit(View);
         }
 
         Task IPageLifecycleEvent.WillPopEnter()
@@ -73,6 +73,15 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
         }
 
         protected virtual void ViewDidPushEnter(TPage page)
+        {
+        }
+        
+        protected virtual Task ViewWillPushExit(TPage view)
+        {
+            return Task.CompletedTask;
+        }
+        
+        protected virtual void ViewDidPushExit(TPage view)
         {
         }
         

@@ -1,7 +1,8 @@
 using Cysharp.Threading.Tasks;
 using FlashAnzan.PresentationFramework;
-using UnityEngine;
+using FlashAnzan.View.Foundation.Binders;
 using UnityEngine.UI;
+using R3;
 
 namespace FlashAnzan.View.Top
 {
@@ -11,7 +12,9 @@ namespace FlashAnzan.View.Top
 
         protected override UniTask Initialize(TopViewState state)
         {
-            throw new System.NotImplementedException();
+            var internalState = (ITopState)state;
+            Button.SetOnClickDestination(internalState.InvokeBackButtonClicked).AddTo(this);
+            return UniTask.CompletedTask;
         }
     }
 }

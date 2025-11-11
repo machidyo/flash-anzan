@@ -1,18 +1,23 @@
+using System;
 using FlashAnzan.PresentationFramework;
-using UnityEngine;
+using R3;
 
 namespace FlashAnzan.View.Top
 {
     public class TopViewState : AppViewState, ITopState
     {
+        private readonly Subject<Unit> onClickedSubject = new Subject<Unit>();
+        
+        public Observable<Unit> OnClicked => onClickedSubject;
+        
         protected override void DisposeInternal()
         {
-            throw new System.NotImplementedException();
+            onClickedSubject.Dispose();
         }
 
-        public void InvokeBackButtonClicked()
+        void ITopState.InvokeBackButtonClicked()
         {
-            throw new System.NotImplementedException();
+            onClickedSubject.OnNext(Unit.Default);
         }
     }
 

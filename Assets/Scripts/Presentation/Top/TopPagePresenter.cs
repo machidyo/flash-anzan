@@ -1,6 +1,7 @@
+using System.Threading.Tasks;
 using FlashAnzan.Presentation.Shared;
 using FlashAnzan.View.Top;
-using UnityEngine;
+using R3;
 
 namespace FlashAnzan.Presentation.Top
 {
@@ -10,6 +11,10 @@ namespace FlashAnzan.Presentation.Top
         {
         }
 
-        // ViewDidLoad(...)
+        protected override Task ViewDidLoad(TopPage view, TopViewState viewState)
+        {
+            viewState.OnClicked.Subscribe(_ => TransitionService.TopPageClicked());
+            return Task.CompletedTask;
+        }
     }
 }

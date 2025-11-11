@@ -1,7 +1,9 @@
+using FlashAnzan.Presentation.Loading;
 using FlashAnzan.Presentation.Shared;
 using FlashAnzan.Presentation.Top;
 using FlashAnzan.PresentationFramework.UnityScreenExtentions;
 using FlashAnzan.View.Top;
+using FlashAnzan.View.Loading;
 using UnityScreenNavigator.Runtime.Core.Page;
 using R3;
 
@@ -10,12 +12,16 @@ namespace FlashAnzan.Composition
     public class TransitionService : ITransitionService
     {
         private readonly TopPagePresenterFactory topPagePresenterFactory;
+        private readonly LoadingPagePresenterFactory loadingPagePresenterFactory;
         
         private static PageContainer MainPageContainer => PageContainer.Find("MainPageContainer");
 
-        public TransitionService(TopPagePresenterFactory tppf)
+        public TransitionService(
+            TopPagePresenterFactory tppf,
+            LoadingPagePresenterFactory ldpff)
         {
             topPagePresenterFactory = tppf;
+            loadingPagePresenterFactory = ldpff;
         }
         
         public void ApplicationStarted()
@@ -27,6 +33,18 @@ namespace FlashAnzan.Composition
                     var presenter = topPagePresenterFactory.Create(page, this);
                     OnPagePresenterCreated(presenter, page);
                 });
+        }
+
+        public void TopPageClicked()
+        {
+            MainPageContainer.Push<LoadingPage>("LoadingPage", true,
+                onLoad: x =>
+                {
+                    var page = x.page;
+                    var presenter = loadingPagePresenterFactory.Create(page, this);
+                    OnPagePresenterCreated(presenter, page);
+                },
+                stack: false);
         }
 
         private IPagePresenter OnPagePresenterCreated(IPagePresenter presenter, Page page, bool shouldInitialize = true)

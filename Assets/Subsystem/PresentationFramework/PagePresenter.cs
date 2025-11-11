@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FlashAnzan.Misc;
 using FlashAnzan.PresentationFramework.UnityScreenExtentions;
 
@@ -11,6 +12,7 @@ namespace FlashAnzan.PresentationFramework
         where TRootViewState : AppViewState, new()
     {
         private readonly List<IDisposable> disposables = new ();
+        private TRootViewState rootViewState;
 
         protected PagePresenter(TPage view) : base(view)
         {
@@ -24,6 +26,21 @@ namespace FlashAnzan.PresentationFramework
         protected sealed override void Initialize(TPage view)
         {
             base.Initialize(view);
+        }
+
+        protected sealed override async Task ViewDidLoad(TPage view)
+        {
+            await base.ViewDidLoad(view);
+            var state = new TRootViewState();
+            rootViewState = state;
+            disposables.Add(state);
+            view.SetUp(state);
+            await ViewDidLoad(view, rootViewState);
+        }
+
+        protected virtual Task ViewDidLoad(TPage view, TRootViewState state)
+        {
+            return Task.CompletedTask;
         }
 
         protected sealed override void Dispose(TPage view)
