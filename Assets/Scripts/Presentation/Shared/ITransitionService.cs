@@ -5,6 +5,7 @@ namespace FlashAnzan.Presentation.Shared
     {
         void ApplicationStarted();
         void TopPageClicked();
+        void HomeLoadingPageShown();
     }
 }
 

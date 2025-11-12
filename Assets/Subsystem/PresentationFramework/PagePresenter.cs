@@ -38,9 +38,18 @@ namespace FlashAnzan.PresentationFramework
             await ViewDidLoad(view, rootViewState);
         }
 
+        protected sealed override void ViewDidPushEnter(TPage view)
+        {
+            ViewDidPushEnter(view, rootViewState);
+        }
+
         protected virtual Task ViewDidLoad(TPage view, TRootViewState state)
         {
             return Task.CompletedTask;
+        }
+
+        protected virtual void ViewDidPushEnter(TPage view, TRootViewState state)
+        {
         }
 
         protected sealed override void Dispose(TPage view)

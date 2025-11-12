@@ -4,6 +4,7 @@ using FlashAnzan.Presentation.Top;
 using FlashAnzan.PresentationFramework.UnityScreenExtentions;
 using FlashAnzan.View.Top;
 using FlashAnzan.View.Loading;
+using UnityEngine;
 using UnityScreenNavigator.Runtime.Core.Page;
 using R3;
 
@@ -45,6 +46,11 @@ namespace FlashAnzan.Composition
                     OnPagePresenterCreated(presenter, page);
                 },
                 stack: false);
+        }
+
+        public void HomeLoadingPageShown()
+        {
+            Debug.Log("HomeLoadingPageShown");
         }
 
         private IPagePresenter OnPagePresenterCreated(IPagePresenter presenter, Page page, bool shouldInitialize = true)
