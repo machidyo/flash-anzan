@@ -59,7 +59,7 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
 
         Task IPageLifecycleEvent.Cleanup()
         {
-            throw new System.NotImplementedException();
+            return ViewWillDestroy(View);
         }
 
         protected virtual Task ViewDidLoad(TPage page)
@@ -83,6 +83,11 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
         
         protected virtual void ViewDidPushExit(TPage view)
         {
+        }
+
+        protected virtual Task ViewWillDestroy(TPage view)
+        {
+            return Task.CompletedTask;
         }
         
         protected override void Initialize(TPage view)
