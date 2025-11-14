@@ -6,7 +6,6 @@ using FlashAnzan.PresentationFramework.UnityScreenExtensions;
 using FlashAnzan.View.Home;
 using FlashAnzan.View.Top;
 using FlashAnzan.View.Loading;
-using UnityEngine;
 using UnityScreenNavigator.Runtime.Core.Page;
 using R3;
 
