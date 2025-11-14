@@ -2,7 +2,7 @@ using FlashAnzan.Presentation.Home;
 using FlashAnzan.Presentation.Loading;
 using FlashAnzan.Presentation.Shared;
 using FlashAnzan.Presentation.Top;
-using FlashAnzan.PresentationFramework.UnityScreenExtentions;
+using FlashAnzan.PresentationFramework.UnityScreenExtensions;
 using FlashAnzan.View.Home;
 using FlashAnzan.View.Top;
 using FlashAnzan.View.Loading;

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityScreenNavigator.Runtime.Core.Page;
 
-namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
+namespace FlashAnzan.PresentationFramework.UnityScreenExtensions
 {
     public abstract class PagePresenter<TPage> : Presenter<TPage>, IPagePresenter where TPage : Page
     {

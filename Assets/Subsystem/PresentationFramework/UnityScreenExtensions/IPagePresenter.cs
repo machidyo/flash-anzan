@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityScreenNavigator.Runtime.Core.Page;
 
-namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
+namespace FlashAnzan.PresentationFramework.UnityScreenExtensions
 {
     public interface IPagePresenter : IPresenter, IPageLifecycleEvent
     {

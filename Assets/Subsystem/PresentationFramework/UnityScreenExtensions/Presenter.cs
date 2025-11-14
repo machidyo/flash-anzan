@@ -1,6 +1,6 @@
 using System;
 
-namespace FlashAnzan.PresentationFramework.UnityScreenExtentions
+namespace FlashAnzan.PresentationFramework.UnityScreenExtensions
 {
     public abstract class Presenter<TView> : IDisposable
     {

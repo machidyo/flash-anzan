@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FlashAnzan.Misc;
-using FlashAnzan.PresentationFramework.UnityScreenExtentions;
+using FlashAnzan.PresentationFramework.UnityScreenExtensions;
 
 namespace FlashAnzan.PresentationFramework
 {
