@@ -9,9 +9,9 @@ namespace FlashAnzan.PresentationFramework.UnityScreenExtensions
         
         private TView View { get; }
 
-        protected Presenter(TView tView)
+        protected Presenter(TView view)
         {
-            View = tView;
+            View = view;
         }
         
         public virtual void Dispose()

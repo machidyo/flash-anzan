@@ -5,7 +5,9 @@ namespace FlashAnzan.Presentation.Shared
     {
         void ApplicationStarted();
         void TopPageClicked();
+        void TopPageSettingButtonClicked();
         void HomeLoadingPageShown();
+        void PopCommandExecuted();
     }
 }
 

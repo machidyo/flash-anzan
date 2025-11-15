@@ -6,23 +6,32 @@ namespace FlashAnzan.View.Top
 {
     public class TopViewState : AppViewState, ITopState
     {
-        private readonly Subject<Unit> onClickedSubject = new Subject<Unit>();
+        private readonly Subject<Unit> onSettingButtonClickedSubject = new Subject<Unit>();
+        private readonly Subject<Unit> onStartButtonClickedSubject = new Subject<Unit>();
         
-        public Observable<Unit> OnClicked => onClickedSubject;
+        public Observable<Unit> OnSettingButtonClicked => onSettingButtonClickedSubject;
+        public Observable<Unit> OnStartButtonClicked => onStartButtonClickedSubject;
         
         protected override void DisposeInternal()
         {
-            onClickedSubject.Dispose();
+            onSettingButtonClickedSubject.Dispose();
+            onStartButtonClickedSubject.Dispose();
         }
 
-        void ITopState.InvokeBackButtonClicked()
+        void ITopState.InvokeSettingButtonClicked()
         {
-            onClickedSubject.OnNext(Unit.Default);
+            onSettingButtonClickedSubject.OnNext(Unit.Default);
+        }
+
+        void ITopState.InvokeStartButtonClicked()
+        {
+            onStartButtonClickedSubject.OnNext(Unit.Default);
         }
     }
 
     internal interface ITopState
     {
-        void InvokeBackButtonClicked();
+        void InvokeSettingButtonClicked();
+        void InvokeStartButtonClicked();
     }
 }

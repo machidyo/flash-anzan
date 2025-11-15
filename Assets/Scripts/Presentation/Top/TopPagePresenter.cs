@@ -13,7 +13,8 @@ namespace FlashAnzan.Presentation.Top
 
         protected override Task ViewDidLoad(TopPage view, TopViewState viewState)
         {
-            viewState.OnClicked.Subscribe(_ => TransitionService.TopPageClicked());
+            viewState.OnSettingButtonClicked.Subscribe(_ => TransitionService.TopPageSettingButtonClicked());
+            viewState.OnStartButtonClicked.Subscribe(_ => TransitionService.TopPageClicked());
             return Task.CompletedTask;
         }
     }
