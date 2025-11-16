@@ -9,12 +9,14 @@ namespace FlashAnzan.View.Setting
 {
     public class SettingView : AppView<SettingViewState>
     {
-        [SerializeField] private Button closeButton;
+        [SerializeField] private Button saveButton;
+        [SerializeField] private Button cancelButton;
 
         protected override UniTask Initialize(SettingViewState state)
         {
             var internalState = (ISettingState)state;
-            closeButton.SetOnClickDestination(internalState.InvokeCloseButtonClicked).AddTo(this);
+            saveButton.SetOnClickDestination(internalState.InvokeSaveButtonClicked).AddTo(this);
+            cancelButton.SetOnClickDestination(internalState.InvokeCancelButtonClicked).AddTo(this);
             return UniTask.CompletedTask;
         }
     }

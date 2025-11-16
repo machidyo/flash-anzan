@@ -6,23 +6,32 @@ namespace FlashAnzan.View.Setting
 {
     public class SettingViewState : AppViewState, ISettingState
     {
-        private readonly Subject<Unit> onCloseButtonClickedSubject = new Subject<Unit>();
+        private readonly Subject<Unit> onSaveButtonClickedSubject = new ();
+        private readonly Subject<Unit> onCancelButtonClickedSubject = new ();
         
-        public Observable<Unit> OnCloseButtonClicked => onCloseButtonClickedSubject;
+        public Observable<Unit> OnSaveButtonClicked => onSaveButtonClickedSubject;
+        public Observable<Unit> OnCancelButtonClicked => onCancelButtonClickedSubject;
         
         protected override void DisposeInternal()
         {
-            onCloseButtonClickedSubject.Dispose();
+            onSaveButtonClickedSubject.Dispose();
+            onCancelButtonClickedSubject.Dispose();
         }
 
-        void ISettingState.InvokeCloseButtonClicked()
+        void ISettingState.InvokeSaveButtonClicked()
         {
-            onCloseButtonClickedSubject.OnNext(Unit.Default);
+            onSaveButtonClickedSubject.OnNext(Unit.Default);
+        }
+
+        void ISettingState.InvokeCancelButtonClicked()
+        {
+            onCancelButtonClickedSubject.OnNext(Unit.Default);
         }
     }
 
     internal interface ISettingState
     {
-        void InvokeCloseButtonClicked();
+        void InvokeSaveButtonClicked();
+        void InvokeCancelButtonClicked();
     }
 }

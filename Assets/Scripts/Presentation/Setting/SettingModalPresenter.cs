@@ -14,7 +14,8 @@ namespace FlashAnzan.Presentation.Setting
 
         protected override Task ViewDidLoad(SettingModal view, SettingViewState viewState)
         {
-            viewState.OnCloseButtonClicked.Subscribe(_ => TransitionService.PopCommandExecuted());
+            viewState.OnSaveButtonClicked.Subscribe(_ => Debug.Log("保存します"));
+            viewState.OnCancelButtonClicked.Subscribe(_ => TransitionService.PopCommandExecuted());
             return Task.CompletedTask;
         }
     }

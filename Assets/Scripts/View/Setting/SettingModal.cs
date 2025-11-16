@@ -1,5 +1,4 @@
 using FlashAnzan.PresentationFramework;
-using UnityEngine;
 
 namespace FlashAnzan.View.Setting
 {
