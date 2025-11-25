@@ -1,19 +1,16 @@
 {
-    "name": "FlashAnzan.View",
+    "name": "FlashAnzan.Repository",
     "rootNamespace": "",
     "references": [
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:2359c074672083046b6ff6b309700f8e",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:77221876cc6b8244180b96e320b1bcd4",
-        "GUID:73e2105650c51f945aaf13b0615d76ae"
+        "GUID:c6d23df0cb948634190e98450be9a52a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

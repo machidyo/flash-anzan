@@ -8,7 +8,8 @@ namespace FlashAnzan.View.Setting
     {
         private readonly Subject<Unit> onSaveButtonClickedSubject = new ();
         private readonly Subject<Unit> onCancelButtonClickedSubject = new ();
-        
+
+        public SettingValuesViewState SettingValuesViewState { get; } = new ();
         public Observable<Unit> OnSaveButtonClicked => onSaveButtonClickedSubject;
         public Observable<Unit> OnCancelButtonClicked => onCancelButtonClickedSubject;
         

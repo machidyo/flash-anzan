@@ -1,9 +1,9 @@
+using UnityEngine;
+using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
+using R3;
 using FlashAnzan.PresentationFramework;
 using FlashAnzan.View.Foundation.Binders;
-using UnityEngine.UI;
-using R3;
-using UnityEngine;
 
 namespace FlashAnzan.View.Setting
 {
@@ -11,13 +11,15 @@ namespace FlashAnzan.View.Setting
     {
         [SerializeField] private Button saveButton;
         [SerializeField] private Button cancelButton;
+        
+        [SerializeField] private SettingValuesView settingValuesView;
 
         protected override UniTask Initialize(SettingViewState state)
         {
             var internalState = (ISettingState)state;
             saveButton.SetOnClickDestination(internalState.InvokeSaveButtonClicked).AddTo(this);
             cancelButton.SetOnClickDestination(internalState.InvokeCancelButtonClicked).AddTo(this);
-            return UniTask.CompletedTask;
+            return settingValuesView.InitializeAsync(state.SettingValuesViewState);
         }
     }
 }
